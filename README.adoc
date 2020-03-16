@@ -1,1 +1,44 @@
-# microservice
+= Microservices com Spring Cloud
+
+Projeto desenvolvido e disponibilizado para fins de consultas e estudos.
+
+---
+
+=== Tecnologias
+----
+* Java
+* Maven
+* Spring Boot
+* JPA Hibernate
+* MySQL
+* Spring Cloud Config Server
+* Spring Cloud Netflix (Eureka)
+----
+
+=== Abordagem - Parte 1
+
+* *Quebrando o domínio em serviços*
+    . Microsserviços
+    . Spring Cloud
+* *Service Registry com Eureka*
+    . Usando RestTemplate - Efetuar requisições
+    . Integração entre microsserviços
+    . Service Discovery com Eureka - Identificação dos microsserviços
+* *Spring Config Server*
+    . Configurações no GitHub - Properties da aplicação no GitHub sendo acessado pelo Spring Config Server.
+* *Load Balancer e Spring Feign*
+    . Client Side Load Balancer
+    . Spring Feign - Substituindo o RestTemplate
+* *Distributed Tracing e Spring Sleuth*
+    . Distributed Tracing - Adicionando logs na aplicação.
+    . Usando o Papertrail - Servidor de logs (ferramenta).
+    . Spring Sleuth - Identificador do log para uma requisição.
+    
+---
+
+Inspirado no(s) curso(s):
+
+* *Microservices com Spring Cloud: Registry, Config Server e Distributed Tracing* 
+
+https://www.alura.com.br/[Alura | Cursos online de tecnologia]
+
