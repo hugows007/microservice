@@ -1,0 +1,4 @@
+package br.com.alura.microservice.auth;
+
+public class WebSecurityConfigurer {
+}
