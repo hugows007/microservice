@@ -20,7 +20,7 @@ Projeto desenvolvido e disponibilizado para fins de consultas e estudos.
 -- Create
 create database loja;
 create database transportador;
-create database loja;
+create database fornecedor;
 ```
 
 ---
