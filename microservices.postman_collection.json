@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "0ca36b01-7fad-468d-a7e8-28385577fd53",
+		"name": "microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5555/loja/compra",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "5fa67422-fdf3-45be-a2bd-6ce190ac0614",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itens\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantidade\": 5\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantidade\": 1\r\n        }\r\n    ],\r\n    \"endereco\": {\r\n       \"rua\":\"Rua da Maria\",\r\n       \"numero\": 123,\r\n       \"estado\":\"DF\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/loja/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"loja",
+						"compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5555/loja/compra/11",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itens\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantidade\": 5\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantidade\": 1\r\n        }\r\n    ],\r\n    \"endereco\": {\r\n       \"rua\":\"Rua da Maria\",\r\n       \"numero\": 123,\r\n       \"estado\":\"GO\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/loja/compra/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"loja",
+						"compra",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5555/fornecedor/info/DF",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itens\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantidade\": 5\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantidade\": 1\r\n        }\r\n    ],\r\n    \"endereco\": {\r\n       \"rua\":\"Rua da Maria\",\r\n       \"numero\": 123,\r\n       \"estado\":\"GO\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/fornecedor/info/DF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"fornecedor",
+						"info",
+						"DF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8088/oauth/token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "lojapwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "loja",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "scope",
+							"value": "web",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "joao",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "joaopwd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8088/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8088/user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "7176a978-5674-4fc0-849e-a6567d95f419",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8088/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
