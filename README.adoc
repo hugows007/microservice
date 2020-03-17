@@ -15,6 +15,16 @@ Projeto desenvolvido e disponibilizado para fins de consultas e estudos.
 * Spring Cloud Netflix (Eureka)
 ----
 
+=== Banco de dados
+```sql
+-- Create
+create database loja;
+create database transportador;
+create database loja;
+```
+
+---
+
 === Abordagem - Parte 1
 
 * *Quebrando o domínio em serviços*
@@ -25,20 +35,39 @@ Projeto desenvolvido e disponibilizado para fins de consultas e estudos.
     . Integração entre microsserviços
     . Service Discovery com Eureka - Identificação dos microsserviços
 * *Spring Config Server*
-    . Configurações no GitHub - Properties da aplicação no GitHub sendo acessado pelo Spring Config Server.
+    . Configurações no GitHub - Properties da aplicação no GitHub sendo acessado pelo Spring Config Server
 * *Load Balancer e Spring Feign*
     . Client Side Load Balancer
     . Spring Feign - Substituindo o RestTemplate
 * *Distributed Tracing e Spring Sleuth*
-    . Distributed Tracing - Adicionando logs na aplicação.
-    . Usando o Papertrail - Servidor de logs (ferramenta).
-    . Spring Sleuth - Identificador do log para uma requisição.
+    . Distributed Tracing - Adicionando logs na aplicação
+    . Usando o Papertrail - Servidor de logs (ferramenta)
+    . Spring Sleuth - Identificador do log para uma requisição
+    
+---
+
+
+
+=== Abordagem - Parte 2
+
+* *Fallback e Circuit Breaker*
+    . Chamada de um Fallback quando ocorre um timeout
+* *Bulkhead com Hystrix*
+    . ThreadPool em métodos
+* *Lidando com transação e erros*
+    . Tratando a criação de uma compra por etapas, alterando-se o estado da mesma a cada passo
+* *API Gateway com Spring Zuul*
+    . Spring Zuul e suas configurações
+* *Autenticação e autorização*
+    . Spring Security e Spring Cloud Oauth2
+    . Repassando o token entre microsserviços (Feign interceptor)
     
 ---
 
 Inspirado no(s) curso(s):
 
-* *Microservices com Spring Cloud: Registry, Config Server e Distributed Tracing* 
+* *Microservices com Spring Cloud: Registry, Config Server e Distributed Tracing* e;
+* *Avançando com Microservices: Circuit Breaker, Hystrix e API Gateway*
 
 https://www.alura.com.br/[Alura | Cursos online de tecnologia]
 
