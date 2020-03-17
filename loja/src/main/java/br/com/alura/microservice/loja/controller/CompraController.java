@@ -4,10 +4,7 @@ import br.com.alura.microservice.loja.dto.CompraDTO;
 import br.com.alura.microservice.loja.model.Compra;
 import br.com.alura.microservice.loja.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/compra")
@@ -17,7 +14,12 @@ public class CompraController {
     private CompraService compraService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public Compra realizaCompra(@RequestBody CompraDTO compra){
+    public Compra realizaCompra(@RequestBody CompraDTO compra) {
         return compraService.realizaCompra(compra);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Compra getById(@PathVariable("id") Long id){
+        return compraService.getById(id);
     }
 }
